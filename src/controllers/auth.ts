@@ -11,9 +11,6 @@ const register = catchAsync(async (req: Request, res: Response) => {
     passwordConfirm: req.body.passwordConfirm,
   })
 
-  newUser.password = undefined
-  newUser.passwordConfirm = undefined
-
   res.status(201).json({ success: true, data: newUser })
 })
 
