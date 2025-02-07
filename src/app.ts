@@ -2,6 +2,8 @@ import dotenv from 'dotenv'
 import express from 'express'
 import morgan from 'morgan'
 
+import 'tsconfig-paths/register'
+
 import errorHandler from '@/controllers/error'
 import routes from '@/routes/api'
 import AppError from '@/entities/appError'
