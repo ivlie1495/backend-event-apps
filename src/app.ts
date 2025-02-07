@@ -4,7 +4,7 @@ import morgan from 'morgan'
 
 import errorHandler from '@/controllers/error'
 import routes from '@/routes/api'
-import AppError from '@/utils/appError'
+import AppError from '@/entities/appError'
 
 dotenv.config()
 

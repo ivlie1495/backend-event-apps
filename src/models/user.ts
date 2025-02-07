@@ -1,6 +1,6 @@
 import { Document, model, Schema } from 'mongoose'
 
-import { encryption } from '@/utils/encrypt'
+import encryption from '@/utils/encryption'
 
 export interface IUser extends Document {
   name: string
@@ -25,6 +25,7 @@ export const userSchema = new Schema<IUser>(
       type: String,
       required: true,
       minlength: 8,
+      select: false,
     },
     passwordConfirm: {
       type: String,
@@ -55,6 +56,13 @@ userSchema.pre('save', function (next) {
 
   next()
 })
+
+userSchema.methods.toJSON = function () {
+  const user = this.toObject()
+  delete user.password
+
+  return user
+}
 
 const User = model<IUser>('User', userSchema)
 

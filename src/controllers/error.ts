@@ -1,7 +1,7 @@
 import { ErrorRequestHandler, Response } from 'express'
 import { Error } from 'mongoose'
 
-import AppError from '@/utils/appError'
+import AppError from '@/entities/appError'
 
 const jwtError = new AppError('Invalid token. Please log in again', 401)
 const jwtExpiredError = new AppError('Token expired. Please log in again', 401)
