@@ -1,7 +1,7 @@
 {
   "name": "backend-event-apps",
   "version": "1.0.0",
-  "main": "src/app.ts",
+  "main": "src/server.ts",
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register src/server.ts"
   },
