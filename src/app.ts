@@ -16,7 +16,7 @@ app.use(morgan('dev'))
 app.use(express.json({ limit: '10kb' }))
 
 app.get('/', (_, res) => {
-  res.send('Hello World!')
+  res.status(200).json({ message: 'Hello World!' })
 })
 app.use('/api', routes)
 app.all(/(.*)/, (req, _, next) => {
