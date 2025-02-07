@@ -14,8 +14,11 @@ const app = express()
 
 app.use(morgan('dev'))
 app.use(express.json({ limit: '10kb' }))
-app.use('/api', routes)
 
+app.get('/', (_, res) => {
+  res.send('Hello World!')
+})
+app.use('/api', routes)
 app.all(/(.*)/, (req, _, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404))
 })
